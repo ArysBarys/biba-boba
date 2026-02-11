@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Электронная библиотека КазУТБ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Шапка с именем преподавателя -->
+    <div class="teacher-bar">
+        <div class="container">
+            <div class="teacher-info">
+                <i class="fas fa-user-tie"></i>
+                <div class="teacher-details">
+                    <span class="teacher-label">Преподаватель:</span>
+                    <span class="teacher-name" id="teacherName">Иванов Александр Петрович</span>
+                </div>
+            </div>
+            <button class="btn-logout" id="logoutBtn">
+                <i class="fas fa-sign-out-alt"></i> Сменить пользователя
+            </button>
+        </div>
+    </div>
+
+    <!-- Основной хедер -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>Казакский университет технологии и бизнеса имени К. Кулажанова</h1>
+                    <p class="logo-subtitle">Электронная библиотека</p>
+                </div>
+            </div>
+            
+            <!-- Поисковая строка -->
+            <div class="search-container">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Поиск электронных книг по названию, автору или описанию...">
+                    <button class="search-btn" id="searchBtn">
+                        <i class="fas fa-search"></i> Найти
+                    </button>
+                </div>
+                <div class="search-filters">
+                    <select id="specialtyFilter">
+                        <option value="all">Все специальности</option>
+                        <option value="it">Информационные технологии</option>
+                        <option value="economy">Экономика и финансы</option>
+                        <option value="management">Менеджмент</option>
+                        <option value="tourism">Туризм и сервис</option>
+                        <option value="marketing">Маркетинг</option>
+                        <option value="finance">Финансы и учет</option>
+                        <option value="logistics">Логистика</option>
+                        <option value="hospitality">Гостеприимство</option>
+                        <option value="design">Дизайн</option>
+                        <option value="engineering">Технологии и инженерия</option>
+                        <option value="agriculture">Агробизнес</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Секция специальностей -->
+        <section class="specialties-section">
+            <div class="container">
+                <h2 class="section-title"><i class="fas fa-book-open"></i> Книга обеспечиность по дисциплинам</h2>
+                
+                <div class="specialties-grid">
+                    <!-- Информационные технологии -->
+                    <div class="specialty-card" data-specialty="it">
+                        <div class="specialty-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Информационные технологии</h3>
+                            <p class="specialty-code">5B070300</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>245 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF, EPUB</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Программирование и алгоритмы</li>
+                                <li>Базы данных</li>
+                                <li>Веб-разработка</li>
+                                <li>Кибербезопасность</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="it">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Экономика и финансы -->
+                    <div class="specialty-card" data-specialty="economy">
+                        <div class="specialty-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Экономика и финансы</h3>
+                            <p class="specialty-code">5B050600</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>198 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Микроэкономика</li>
+                                <li>Финансовый анализ</li>
+                                <li>Банковское дело</li>
+                                <li>Налогообложение</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="economy">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Менеджмент -->
+                    <div class="specialty-card" data-specialty="management">
+                        <div class="specialty-icon">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Менеджмент</h3>
+                            <p class="specialty-code">5B050700</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>176 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF, EPUB</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Управление проектами</li>
+                                <li>Организационное поведение</li>
+                                <li>Стратегический менеджмент</li>
+                                <li>Управление персоналом</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="management">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Туризм и сервис -->
+                    <div class="specialty-card" data-specialty="tourism">
+                        <div class="specialty-icon">
+                            <i class="fas fa-plane"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Туризм и сервис</h3>
+                            <p class="specialty-code">5B090200</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>142 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Гостиничный бизнес</li>
+                                <li>Туристический менеджмент</li>
+                                <li>Сервисная деятельность</li>
+                                <li>Event-менеджмент</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="tourism">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Маркетинг -->
+                    <div class="specialty-card" data-specialty="marketing">
+                        <div class="specialty-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Маркетинг</h3>
+                            <p class="specialty-code">5B050800</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>189 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Цифровой маркетинг</li>
+                                <li>Исследование рынка</li>
+                                <li>Бренд-менеджмент</li>
+                                <li>Реклама и PR</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="marketing">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Финансы и учет -->
+                    <div class="specialty-card" data-specialty="finance">
+                        <div class="specialty-icon">
+                            <i class="fas fa-money-bill-wave"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Финансы и учет</h3>
+                            <p class="specialty-code">5B050900</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>201 книга</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Бухгалтерский учет</li>
+                                <li>Аудит</li>
+                                <li>Финансовый менеджмент</li>
+                                <li>Международные финансы</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="finance">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Логистика -->
+                    <div class="specialty-card" data-specialty="logistics">
+                        <div class="specialty-icon">
+                            <i class="fas fa-shipping-fast"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Логистика</h3>
+                            <p class="specialty-code">5B090300</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>156 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Управление цепями поставок</li>
+                                <li>Транспортная логистика</li>
+                                <li>Складская логистика</li>
+                                <li>Таможенное дело</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="logistics">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Гостеприимство -->
+                    <div class="specialty-card" data-specialty="hospitality">
+                        <div class="specialty-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Гостеприимство</h3>
+                            <p class="specialty-code">5B090400</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>134 книги</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Ресторанный бизнес</li>
+                                <li>Кейтеринг</li>
+                                <li>Управление качеством</li>
+                                <li>Стандарты обслуживания</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="hospitality">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Дизайн -->
+                    <div class="specialty-card" data-specialty="design">
+                        <div class="specialty-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Дизайн</h3>
+                            <p class="specialty-code">5B042100</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>167 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF, EPUB</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Графический дизайн</li>
+                                <li>Веб-дизайн</li>
+                                <li>Дизайн интерьера</li>
+                                <li>UX/UI дизайн</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="design">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Технологии и инженерия -->
+                    <div class="specialty-card" data-specialty="engineering">
+                        <div class="specialty-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Технологии и инженерия</h3>
+                            <p class="specialty-code">5B070000</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>223 книги</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Промышленные технологии</li>
+                                <li>Энергетика</li>
+                                <li>Экология и безопасность</li>
+                                <li>Технологии производства</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="engineering">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Агробизнес -->
+                    <div class="specialty-card" data-specialty="agriculture">
+                        <div class="specialty-icon">
+                            <i class="fas fa-tractor"></i>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Агробизнес</h3>
+                            <p class="specialty-code">5B080100</p>
+                            <div class="specialty-stats">
+                                <span class="stat-item">
+                                    <i class="fas fa-book"></i>
+                                    <span>178 книг</span>
+                                </span>
+                                <span class="stat-item">
+                                    <i class="fas fa-file-pdf"></i>
+                                    <span>PDF</span>
+                                </span>
+                            </div>
+                            <ul class="book-list">
+                                <li>Агрономия</li>
+                                <li>Агромаркетинг</li>
+                                <li>Пищевые технологии</li>
+                                <li>Управление агропредприятием</li>
+                            </ul>
+                            <button class="btn-view-books" data-specialty="agriculture">
+                                <i class="fas fa-external-link-alt"></i> Показать книги
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Результаты поиска -->
+        <section id="searchResults" class="search-results-section" style="display: none;">
+            <div class="container">
+                <div class="results-header">
+                    <h2><i class="fas fa-search"></i> Результаты поиска</h2>
+                    <div class="results-info">
+                        <p>Найдено электронных книг: <span id="resultsCount">0</span></p>
+                        <button class="btn-clear" id="clearSearch">
+                            <i class="fas fa-times"></i> Очистить поиск
+                        </button>
+                    </div>
+                </div>
+                <div class="books-grid" id="booksGrid">
+                    <!-- Книги будут добавляться через JavaScript -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <h3>КазУТБ</h3>
+                            <p>Казахстанский университет технологий и бизнеса</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Электронная библиотека учебных материалов для студентов и преподавателей
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> г. Астана, ул. Кенесары, 39</p>
+                    <p><i class="fas fa-phone"></i> +7 (7172) 70-30-30</p>
+                    <p><i class="fas fa-envelope"></i> library@kutb.edu.kz</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Доступ к ресурсам</h4>
+                    <p>Круглосуточный доступ</p>
+                    <p>Только для студентов и преподавателей КазУТБ</p>
+                    <p>Авторизация по университету</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Казахстанский университет технологий и бизнеса. Электронная библиотека.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальное окно для смены пользователя -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fas fa-user-tie"></i> Выберите преподавателя</h3>
+            <div class="teachers-list">
+                <div class="teacher-option" data-teacher="Ахметов Болат Каирбекович">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <h4>Ахметов Б.К.</h4>
+                        <p>Кафедра информационных технологий</p>
+                    </div>
+                </div>
+                <div class="teacher-option" data-teacher="Нургалиева Айгуль Сапаровна">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <h4>Нургалиева А.С.</h4>
+                        <p>Кафедра экономики</p>
+                    </div>
+                </div>
+                <div class="teacher-option" data-teacher="Калиев Марлен Жумабекович">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <h4>Калиев М.Ж.</h4>
+                        <p>Кафедра менеджмента</p>
+                    </div>
+                </div>
+                <div class="teacher-option" data-teacher="Иванов Александр Петрович">
+                    <i class="fas fa-user-tie"></i>
+                    <div>
+                        <h4>Иванов А.П.</h4>
+                        <p>Кафедра маркетинга</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
